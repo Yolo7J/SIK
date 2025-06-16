@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\SIK.Infrastructure\SIK.Infrastructure.csproj" />
     <ProjectReference Include="..\SIK.Core\SIK.Core.csproj" />
+	<ProjectReference Include="..\SIK.Constants\SIK.Constants.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
