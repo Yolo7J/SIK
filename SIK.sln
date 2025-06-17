@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIK.Core", "SIK.Core\SIK.Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIK.Infrastructure", "SIK.Infrastructure\SIK.Infrastructure.csproj", "{1F1136DD-7BAD-43F4-B801-DE5A518E543D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIK.Constants", "SIK.Constants\SIK.Constants.csproj", "{4CE94C3A-8804-2AF6-6D71-D4B1679E7079}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{1F1136DD-7BAD-43F4-B801-DE5A518E543D}.Release|x64.Build.0 = Release|Any CPU
 		{1F1136DD-7BAD-43F4-B801-DE5A518E543D}.Release|x86.ActiveCfg = Release|Any CPU
 		{1F1136DD-7BAD-43F4-B801-DE5A518E543D}.Release|x86.Build.0 = Release|Any CPU
+		{4CE94C3A-8804-2AF6-6D71-D4B1679E7079}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CE94C3A-8804-2AF6-6D71-D4B1679E7079}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CE94C3A-8804-2AF6-6D71-D4B1679E7079}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4CE94C3A-8804-2AF6-6D71-D4B1679E7079}.Debug|x64.Build.0 = Debug|Any CPU
+		{4CE94C3A-8804-2AF6-6D71-D4B1679E7079}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4CE94C3A-8804-2AF6-6D71-D4B1679E7079}.Debug|x86.Build.0 = Debug|Any CPU
+		{4CE94C3A-8804-2AF6-6D71-D4B1679E7079}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CE94C3A-8804-2AF6-6D71-D4B1679E7079}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CE94C3A-8804-2AF6-6D71-D4B1679E7079}.Release|x64.ActiveCfg = Release|Any CPU
+		{4CE94C3A-8804-2AF6-6D71-D4B1679E7079}.Release|x64.Build.0 = Release|Any CPU
+		{4CE94C3A-8804-2AF6-6D71-D4B1679E7079}.Release|x86.ActiveCfg = Release|Any CPU
+		{4CE94C3A-8804-2AF6-6D71-D4B1679E7079}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

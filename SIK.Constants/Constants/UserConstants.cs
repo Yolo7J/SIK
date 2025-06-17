@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SIK.Constants.Constants
+﻿namespace SIK.Constants
 {
-    internal class UserConstants
+    public static class UserConstants
     {
+        public const int NameMaxLength = 50;
+        public const int NameMinLength = 2;
+
     }
 }
