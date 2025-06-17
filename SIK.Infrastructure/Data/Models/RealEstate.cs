@@ -18,6 +18,7 @@ namespace SIK.Infrastructure.Data.Models
         public int YearOfConstruction { get; set; }
         [Required]
         public List<RealEstateOwnership> Owners { get; set; } = new List<RealEstateOwnership>();
+        [Required]
         public decimal MarketPrice { get; set; }
         public string? ImageUrl { get; set; } = null;
 
