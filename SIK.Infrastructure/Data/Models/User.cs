@@ -26,5 +26,9 @@ namespace SIK.Infrastructure.Data.Models
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         [Required]
         public DateTime LastUpdatedAt { get; set; } = DateTime.UtcNow;
+        public string? ProfilePictureUrl { get; set; } = null;
+        [Required]
+        public bool IsDeleated { get; set; } = false;
+        public List<RealEstateOwnership> OwnedProperties { get; set; } = new List<RealEstateOwnership>();
     }
 }

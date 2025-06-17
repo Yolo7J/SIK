@@ -29,5 +29,6 @@ namespace SIK.Infrastructure.Data.Models
         public User Owner { get; set; }
         [Required]
         public decimal Price { get; set; }
+        public string? ImageUrl { get; set; } = null;
     }
 }

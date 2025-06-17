@@ -16,13 +16,10 @@ namespace SIK.Infrastructure.Data.Models
         public double AreaInSqrMeters { get; set; }
         [Required]
         public int YearOfConstruction { get; set; }
-        [ForeignKey(nameof(Owner))]
         [Required]
-        public int OwnerId { get; set; }
-        [Required]
-        public User Owner { get; set; } = null!;
+        public List<RealEstateOwnership> Owners { get; set; } = new List<RealEstateOwnership>();
         public decimal MarketPrice { get; set; }
-
+        public string? ImageUrl { get; set; } = null;
 
     }
 }
