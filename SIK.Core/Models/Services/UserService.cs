@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SIK.Core.Models.Services
 {
@@ -172,6 +170,72 @@ namespace SIK.Core.Models.Services
                     return true;
                 }
                 catch (KeyNotFoundException)
+                {
+                    return false;
+                }
+            }
+            public async Task<bool> AddOwnedPropertyAsync(int userId, RealEstateOwnershipVM ownershipVm)
+            {
+                try
+                {
+                    var ownership = new RealEstateOwnership
+                    {
+                        UserId = userId,
+                        RealEstateId = ownershipVm.RealEstateId,
+                        OwnershipPercentage = ownershipVm.OwnershipPercentage,
+                        DateAcquired = ownershipVm.DateAcquired,
+                    };
+
+                    await _repository.AddAsync(ownership);
+                    await _repository.SaveChangesAsync();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            public async Task<bool> RemoveOwnedPropertyAsync(int userId, int realEstateId)
+            {
+                try
+                {
+                    var ownerships = _repository.AllAsync<RealEstateOwnership>();
+                    var ownership = await ownerships
+                        .FirstOrDefaultAsync(o => o.UserId == userId && o.RealEstateId == realEstateId);
+
+                    if (ownership == null)
+                        return false;
+
+                    _repository.DeleteAsync<RealEstateOwnership>(ownership.Id.ToString()); // assuming RealEstateOwnership has an Id key
+                    await _repository.SaveChangesAsync();
+
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+
+            // Update an existing ownership record by userId and realEstateId
+            public async Task<bool> UpdateOwnedPropertyAsync(int userId, RealEstateOwnershipVM ownershipVm)
+            {
+                try
+                {
+                    var ownerships = _repository.AllAsync<RealEstateOwnership>();
+                    var ownership = await ownerships
+                        .FirstOrDefaultAsync(o => o.UserId == userId && o.RealEstateId == ownershipVm.RealEstateId);
+
+                    if (ownership == null)
+                        return false;
+
+                    ownership.OwnershipPercentage = ownershipVm.OwnershipPercentage;
+                    ownership.DateAcquired = ownershipVm.DateAcquired;
+
+                    await _repository.SaveChangesAsync();
+                    return true;
+                }
+                catch
                 {
                     return false;
                 }

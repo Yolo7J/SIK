@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SIK.Infrastructure.Data.Models;
+using SIK.Infrastructure.Seeding;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,7 @@ namespace SIK.Infrastructure.Data
                 .HasOne(r => r.Owner)
                 .WithMany(u => u.OwnedProperties)
                 .HasForeignKey(r => r.UserId);
+            ApplicationDbContextSeeder.SeedUsers(modelBuilder);
         }
         public DbSet<RealEstate> RealEstates { get; set; }
         public DbSet<Service> Services { get; set; }

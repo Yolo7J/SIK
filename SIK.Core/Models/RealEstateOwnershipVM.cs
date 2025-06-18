@@ -9,6 +9,8 @@ namespace SIK.Core.Models
 {
     public class RealEstateOwnershipVM
     {
+        [Key]
+        public int Id { get; set; }
         [Required]
         public int RealEstateId { get; set; }
         [Required]

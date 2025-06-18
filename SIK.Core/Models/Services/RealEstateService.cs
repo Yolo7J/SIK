@@ -1,13 +1,5 @@
-﻿using SIK.Core.Models;
-using SIK.Infrastructure.Data.Common;
+﻿using SIK.Infrastructure.Data.Common;
 using SIK.Infrastructure.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore;
 
 namespace SIK.Core.Models.Services
@@ -108,6 +100,27 @@ namespace SIK.Core.Models.Services
                 return true;
             }
             catch (KeyNotFoundException)
+            {
+                return false;
+            }
+        }
+        public async Task<bool> AddOwnerAsync(int realEstateId, RealEstateOwnershipVM ownershipVm)
+        {
+            try
+            {
+                var ownership = new RealEstateOwnership
+                {
+                    RealEstateId = realEstateId,
+                    UserId = ownershipVm.UserId,
+                    OwnershipPercentage = ownershipVm.OwnershipPercentage,
+                    DateAcquired = ownershipVm.DateAcquired,
+                };
+
+                await _repository.AddAsync(ownership);
+                await _repository.SaveChangesAsync();
+                return true;
+            }
+            catch
             {
                 return false;
             }

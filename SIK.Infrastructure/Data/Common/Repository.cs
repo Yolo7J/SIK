@@ -40,7 +40,6 @@ namespace SIK.Infrastructure.Data.Common
         {
             return DbSet<T>();
         }
-
         public async Task DeleteAsync<T>(string id) where T : class
         {
             T? entity = await GetByIdAsync<T>(id);
