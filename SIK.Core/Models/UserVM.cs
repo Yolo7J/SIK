@@ -28,5 +28,7 @@ namespace SIK.Core.Models
         public DateTime DateOfBirth { get; set; }
         public string? ProfilePictureUrl { get; set; }
         public List<RealEstateOwnershipVM> OwnedProperties { get; set; } = new List<RealEstateOwnershipVM>();
+        public List<TransportAssetVM> TransportAssets { get; set; } = new List<TransportAssetVM>();
+        public List<ServiceVM> Services { get; set; } = new List<ServiceVM>();
     }
 }

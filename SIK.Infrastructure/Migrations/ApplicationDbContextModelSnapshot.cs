@@ -49,7 +49,7 @@ namespace SIK.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("RealEstates");
+                    b.ToTable("RealEstates", (string)null);
                 });
 
             modelBuilder.Entity("SIK.Infrastructure.Data.Models.RealEstateOwnership", b =>
@@ -70,7 +70,7 @@ namespace SIK.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("RealEstatesOwnerships");
+                    b.ToTable("RealEstatesOwnerships", (string)null);
                 });
 
             modelBuilder.Entity("SIK.Infrastructure.Data.Models.Service", b =>
@@ -114,7 +114,7 @@ namespace SIK.Infrastructure.Migrations
 
                     b.HasIndex("TransportAssetId");
 
-                    b.ToTable("Services");
+                    b.ToTable("Services", (string)null);
                 });
 
             modelBuilder.Entity("SIK.Infrastructure.Data.Models.TransportAsset", b =>
@@ -154,7 +154,7 @@ namespace SIK.Infrastructure.Migrations
 
                     b.HasIndex("OwnerId");
 
-                    b.ToTable("TransportAssets");
+                    b.ToTable("TransportAssets", (string)null);
                 });
 
             modelBuilder.Entity("SIK.Infrastructure.Data.Models.User", b =>
@@ -239,7 +239,7 @@ namespace SIK.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("SIK.Infrastructure.Data.Models.RealEstateOwnership", b =>

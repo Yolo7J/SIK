@@ -30,5 +30,7 @@ namespace SIK.Infrastructure.Data.Models
         [Required]
         public bool IsDeleated { get; set; } = false;
         public List<RealEstateOwnership> OwnedProperties { get; set; } = new List<RealEstateOwnership>();
+        public List<TransportAsset> TransportAssets { get; set; } = new List<TransportAsset>();
+        public List<Service> Services { get; set; } = new List<Service>();
     }
 }
