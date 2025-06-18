@@ -21,6 +21,5 @@ namespace SIK.Infrastructure.Data.Models
         [Required]
         public decimal MarketPrice { get; set; }
         public string? ImageUrl { get; set; } = null;
-
     }
 }

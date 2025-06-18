@@ -35,6 +35,10 @@ namespace SIK.Infrastructure.Data
                 .WithMany(u => u.OwnedProperties)
                 .HasForeignKey(r => r.UserId);
             ApplicationDbContextSeeder.SeedUsers(modelBuilder);
+            ApplicationDbContextSeeder.SeedTransportAssets(modelBuilder);
+            ApplicationDbContextSeeder.SeedRealEstates(modelBuilder);
+            ApplicationDbContextSeeder.SeedRealEstateOwnerships(modelBuilder);
+            ApplicationDbContextSeeder.SeedServices(modelBuilder);
         }
         public DbSet<RealEstate> RealEstates { get; set; }
         public DbSet<Service> Services { get; set; }
